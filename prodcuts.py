@@ -8,6 +8,7 @@ with open('products.csv', 'r', encoding = 'utf-8') as f:
 		products.append([name, price])
 print(products)
 #讓使用者輸入
+sum = 0
 while True:
     name = input('請輸入商品名稱: ')
     if name == 'q':
@@ -17,7 +18,6 @@ while True:
     #p = [name, price]
     products.append([name, price])
 print(products) 
-
 #印出購買紀錄
 for p in products:
 	print(p[0], '的價格是', p[1], '元') 
@@ -25,6 +25,8 @@ for p in products:
 with open ('products.csv', 'w', encoding='utf-8') as f:
 	f.write('商品,價格\n')
 	for p in products:
-		f.write(p[0] + ',' + str(p[1]) + '\n')
+		sum = sum + int(p[1])
+		f.write(p[0] + ',' + str(p[1]) +'\n')
+print('目前花費總和: ', sum, '元')
 
 
