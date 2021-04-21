@@ -7,5 +7,8 @@ while True:
     #p = [name, price]
     products.append([name, price])
 
-print(products)
+print(products) #印出大清單
 print(products[0][1])
+
+for p in products:
+	print(p[0], '的價格是', p[1], '元') #印出小清單
